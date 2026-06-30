@@ -1,0 +1,79 @@
+//Day5
+//HashMap 
+//Q1 count frequency
+
+
+
+import java.util.*;
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+HashMap<Character,Integer>mp = new HashMap<>();
+String s = "Ajayraj";
+s  = s.toLowerCase();
+int n = s.length();
+for(int i=0;i<n;i++){
+char ch = s.charAt(i);
+mp.put(ch,mp.getOrDefault(ch,0)+1);
+}
+for(int i=0;i<n;i++){
+char ch = s.charAt(i);
+  if(mp.get(ch) != 0) {
+System.out.println(ch + " " + mp.get(ch));
+mp.put(ch, 0); 
+ }
+}
+}
+}
+
+
+//Q2 Anagram check
+
+
+import java.util.*;
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+HashMap<Character,Integer>mp = new HashMap<>();
+String s = "ram";
+String s2 = "amr";
+int n = s.length();
+int m = s2.length();
+HashMap<Character, Integer>mp2 = new HashMap<>();
+if(n!=m){
+System.out.println("not an ananagram");
+}
+for(int i=0;i<n;i++){
+char ch = s.charAt(i);
+mp.put(ch,mp.getOrDefault(ch,0)+1);
+char cl = s2.charAt(i);
+mp2.put(cl,mp2.getOrDefault(cl,0)+1);
+}
+if(mp.equals(mp2)){
+    System.out.println("Anagram");
+} else{
+    System.out.println("not an anagram");
+}
+
+}
+}
+
+
+//Q3 Longest common prefix
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        int n = strs.length;
+        if(strs==null || strs.length==0)return " ";
+        for(int i=0;i<strs[0].length();i++){
+            char ch = strs[0].charAt(i);
+            for(int j=1;j<n;j++){
+                if(i==strs[j].length()|| strs[j].charAt(i)!=ch){
+                    return strs[0].substring(0,i);
+                }
+            }
+           
+        }
+         return strs[0];
+    }
+}
+

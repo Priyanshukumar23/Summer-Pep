@@ -1,0 +1,67 @@
+Day1 
+
+//Q1 print numbers 1 to 10
+import java.util.*;
+class Main{
+public static void main(String[] args){
+int n=10;
+for(int i=1;i<=n;i++){
+System.out.println(i);
+}
+}
+}
+
+//q2 find sum of n number
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int sum = 0;
+for(int i=0;i<=n;i++){
+sum += i;
+}
+System.out.print(sum);
+}
+}
+
+//q3 find the largest of 3 number
+class Main{
+public static void main(String[] args){
+int a = 5, b=4,c=10;
+if(a>b && a>c){
+System.out.println("a is greater");
+} else if(b>a && b>c){
+System.out.print("b is great");
+}else{
+System.out.print("c is great");
+}
+
+
+}
+}
+
+//q4 check odd or even
+
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+if(n%2==0){
+System.out.println(n+"is even");
+} else{
+System.out.println(n+"is odd");
+}
+}
+}
+
+//q5 reverse string
+
+
+class Main {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+String s = sc.nextLine();
+StringBuilder sb = new StringBuilder(s);
+System.out.println(sb.reverse());
+    }
+}

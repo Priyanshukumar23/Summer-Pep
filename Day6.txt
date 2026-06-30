@@ -1,0 +1,79 @@
+//Day6
+
+//Q1
+class Solution {
+
+    public static String reverseWords(String s) {
+
+        String x = "";
+        String m = "";
+
+        char[] ch = s.toCharArray();
+
+        for (int i = ch.length - 1; i >= 0; i--) {
+
+            char cl = ch[i];
+
+            if (cl != '_') {
+                x = cl + x;
+            } else {
+                m += x + " ";
+                x = "";
+            }
+        }
+
+        m += x;
+
+        return m;
+    }
+
+    public static void main(String[] args) {
+
+        String s = "Today_is_Monday";  //output Monday is Today
+
+        System.out.println(reverseWords(s));
+    }
+}
+
+
+Or
+
+import java.util.*;
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+String s = "Today_is_Monday"; //output Monday is Today
+
+String[] word = s.split("_");
+int n = word.length;
+for(int i=n-1;i>=0;i--){
+    System.out.print(word[i]);
+    if(i>0){
+        System.out.print(" ");
+    }
+}
+
+
+//Q2
+import java.util.*;
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+String s = "Today_is_Monday"; //output yadnoM si yadoT
+String x = " ";
+char[] ch = s.toCharArray();
+int n = ch.length;
+for(int i=n-1;i>=0;i--){
+    char cl = ch[i];
+    if(cl!='_'){
+        x += cl;
+    } else{
+        x += " ";
+    }
+}
+
+System.out.print(x);
+
+}
+}
+

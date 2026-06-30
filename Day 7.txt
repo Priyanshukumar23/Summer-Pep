@@ -1,0 +1,70 @@
+//Day 7
+
+// Recursion
+
+Q1 print 1 to 5
+import java.util.*;
+class Main{
+public static void recur(int n){
+if(n==0)return;
+recur(n-1);
+System.out.println(n);
+}
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = 5;
+recur(5);
+}
+}
+
+Q2 print 5 to 1
+import java.util.*;
+class Main{
+public static void recur(int n){
+if(n==0)return;
+System.out.println(n);
+recur(n-1);
+
+}
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = 5;
+recur(5);
+}
+}
+
+Q3 factorial
+import java.util.*;
+class Main{
+public static int recur(int n){
+if(n==0 || n==1)return 1;
+
+
+return n*recur(n-1);
+
+}
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = 5;
+System.out.print(recur(5));
+}
+}
+
+//Q4 Fibonnaci series
+public static int recur(int n){
+if(n==0)return 0;
+if(n==1)return 1;
+
+return recur(n-1)+recur(n-2);
+
+}
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+int n = 5;
+
+for(int i=0;i<=n;i++){
+    System.out.println(recur(i));
+}
+
+}
+}
