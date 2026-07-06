@@ -1,0 +1,50 @@
+//Permutation String Leetcode567
+
+
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+
+        int n = s1.length();
+        int m = s2.length();
+
+        if (n > m) return false;
+
+        HashMap<Character, Integer> mp1 = new HashMap<>();
+        HashMap<Character, Integer> mp2 = new HashMap<>();
+
+        // Frequency of s1
+        for (int i = 0; i < n; i++) {
+            char ch = s1.charAt(i);
+            mp1.put(ch, mp1.getOrDefault(ch, 0) + 1);
+        }
+
+        int l = 0;
+
+        // Sliding Window
+        for (int r = 0; r < m; r++) {
+
+            // Add current character
+            char add = s2.charAt(r);
+            mp2.put(add, mp2.getOrDefault(add, 0) + 1);
+
+            // Keep window size = n
+            if (r - l + 1 > n) {
+                char remove = s2.charAt(l);
+                mp2.put(remove, mp2.get(remove) - 1);
+
+                if (mp2.get(remove) == 0) {
+                    mp2.remove(remove);
+                }
+
+                l++;
+            }
+
+            // Compare maps
+            if (mp1.equals(mp2)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}

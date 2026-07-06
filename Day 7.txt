@@ -68,3 +68,20 @@ for(int i=0;i<=n;i++){
 
 }
 }
+
+//Q6 reverse string
+static String recur(String s, int n) {
+
+        if (n < 0)
+            return "";
+
+        return s.charAt(n) + recur(s, n - 1);
+    }
+
+    public static void main(String[] args) {
+
+        String s = "Hello";
+        int n = s.length() - 1;
+
+        System.out.println(recur(s, n));
+    }
